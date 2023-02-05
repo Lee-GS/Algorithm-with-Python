@@ -43,18 +43,18 @@ def bfs(a,b):
                     # q에 추가해주지 않은것이다.
                     # 그래야 가장자리에 있는 치즈만 탐색 할 수 있다.
                     
-    ans.append(cnt)
+    ans.append(cnt) # 정답 리스트에 cnt를 추가해준다
     return cnt
 
 
-while True:
+while True: # 치즈가 다 녹을때까지 반복할거다
     visited = [[False]*m for _ in range(n)]
-    hour+=1
-    if bfs(0,0) == 0:
-        break
+    hour+=1 # 한번 돌때마다 1시간씩 추가된다.
+    if bfs(0,0) == 0: # 치즈가 다 녹았을 경우
+        break # 끝!
     
-print(hour-1)
-print(ans[-2])
+print(hour-1) # 마지막치즈가 다 녹아서 0이된 경우는 빼야함으로 -1을 해준다.
+print(ans[-2]) # 위와 마찬가지로 마지막 턴은 빼야 함으로 뒤에서 2번째 수를 출력해준다.
     
     
              
