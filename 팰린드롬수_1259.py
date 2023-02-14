@@ -1,12 +1,4 @@
-num = input()
-while num !=0:
-    if (num == 0):
-        break
-    num = list(num)
-    num2 = list(reversed(num))
-    if (num == num2):
-        print("yes")
-    else:
-        print("no")
-    num = input()
-    
+while(True):
+    n = input()
+    if n == "0": break
+    print('yes' if n == n[::-1] else 'no')
