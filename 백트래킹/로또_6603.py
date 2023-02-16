@@ -2,7 +2,6 @@ import sys
 input = sys.stdin.readline
 
 
-
 def dfs():
     if len(ans) == 6 and ans == sorted(ans):
         print(' '.join(map(str,ans)))
