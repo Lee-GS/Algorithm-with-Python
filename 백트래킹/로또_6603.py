@@ -3,8 +3,9 @@ input = sys.stdin.readline
 
 
 def dfs():
-    if len(ans) == 6 and ans == sorted(ans):
-        print(' '.join(map(str,ans)))
+    if len(ans) == 6:
+        if ans == sorted(ans):
+            print(' '.join(map(str,ans)))
         return
     for i in range(len(lotto)):
         if visited[i]:
