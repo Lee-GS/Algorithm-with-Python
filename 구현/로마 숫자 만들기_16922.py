@@ -1,6 +1,9 @@
 from itertools import combinations_with_replacement
 
-n  = int(input())
+n = int(input())
+ans = set()
+lst = [1, 5, 10, 50]
 
-arr = list(combinations_with_replacement(range(4),n))
-print(len(arr))
+for combi in combinations_with_replacement(lst, n):
+    ans.add(sum(combi))
+print(len(ans))
