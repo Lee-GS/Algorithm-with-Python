@@ -3,23 +3,17 @@ input = sys.stdin.readline
 
 n,s = map(int,input().split())
 array = list(map(int,input().split()))
-visited = [False] * n
 ans = []
 total = 0
 
-def dfs():
+def dfs(start):
     global total
-    if len(ans) != 0:
-        if sum(ans) == s and sorted(ans) == ans:
-            total+=1 
-    for i in range(len(array)):
-        if visited[i]:
-            continue
-        visited[i] = True
+    if sum(ans) == s and len(ans)>0:
+        total+=1 
+    for i in range(start,n):     
         ans.append(array[i])
-        dfs()
+        dfs(i+1)
         ans.pop()
-        visited[i] = False
 
-dfs()
+dfs(0)
 print(total)
